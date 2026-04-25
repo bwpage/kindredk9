@@ -193,7 +193,7 @@ em { color: var(--cyan); font-style: normal; }
   text-decoration: none;
 }
 .nav-logo:hover { opacity: 0.8; }
-.nav-logo img { height: 52px; width: auto; mix-blend-mode: screen; }
+.nav-logo img { height: 52px; width: auto; }
 
 .nav-links { display: flex; align-items: center; gap: 2.25rem; }
 .nav-links a {
