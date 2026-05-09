@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/theme.js"></script>
 </head>
 <body class="grid-bg">
 
@@ -31,9 +32,20 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Switch to light mode">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -73,12 +85,11 @@
         <h2 class="sr-only" id="services-list-heading">All Services</h2>
 
         <!-- Private Sessions -->
-        <div class="service-full" data-animate>
+        <div class="service-full" data-animate id="private">
           <div>
             <div class="service-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
               </svg>
             </div>
             <h3>Private 1-on-1 Sessions</h3>
@@ -103,18 +114,38 @@
             </div>
           </div>
           <div>
-            <div class="pricing-box">
-              <p class="from">Starting at</p>
-              <p class="price">$135</p>
-              <p class="per">per session</p>
-              <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center">Book Now</a>
+            <div class="pkg-tiers">
+              <div class="pkg-tier">
+                <p class="pkg-tier-name">Single Session</p>
+                <div class="pkg-tier-price">
+                  <span class="pkg-tier-amount">$110</span>
+                  <span class="pkg-tier-unit">/ session</span>
+                </div>
+              </div>
+              <div class="pkg-tier pkg-tier--featured">
+                <p class="pkg-badge">Most Popular</p>
+                <p class="pkg-tier-name">5-Session Package</p>
+                <div class="pkg-tier-price">
+                  <span class="pkg-tier-amount">$510</span>
+                </div>
+                <p class="pkg-breakdown">$102 / session</p>
+                <p class="pkg-save">// Save $40</p>
+              </div>
+              <div class="pkg-tier">
+                <p class="pkg-tier-name">10-Session Package</p>
+                <div class="pkg-tier-price">
+                  <span class="pkg-tier-amount">$950</span>
+                </div>
+                <p class="pkg-breakdown">$95 / session</p>
+                <p class="pkg-save">// Save $150</p>
+              </div>
+              <a href="contact.html?service=private" class="btn btn-primary pkg-cta" style="width:100%;justify-content:center">Book Now</a>
             </div>
-            <p style="font-size:0.8125rem;color:#999;text-align:center;margin-top:0.75rem">Starter (3×) $390 &nbsp;·&nbsp; Foundations (6×) $750<br>Complete (10×) $1,200</p>
           </div>
         </div>
 
         <!-- Group Classes -->
-        <div class="service-full" data-animate>
+        <div class="service-full" data-animate id="group">
           <div>
             <div class="service-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -124,13 +155,13 @@
             </div>
             <h3>Group Training Classes</h3>
             <p class="desc">
-              A fun, social way to build foundational skills. Learn alongside other dog owners in a small,
-              controlled group setting. Your dog practices listening even with distractions around —
-              which is exactly what real life looks like.
+              A fun, social way to build real-world skills alongside other dog owners. Small class sizes mean
+              your dog gets meaningful practice with distractions — without the chaos of a crowded facility.
+              Sessions form once we have enough registered dogs, so spots are limited.
             </p>
             <p class="desc" style="margin-top:0.75rem">
-              <strong>Best for:</strong> Dogs who need socialization practice, owners who enjoy a community
-              atmosphere, and anyone working on basic obedience in real-world conditions.
+              <strong>Best for:</strong> Dogs who need socialization practice and owners who want a community
+              atmosphere. Register your interest and I'll reach out as soon as a session is forming in your area.
             </p>
             <div class="service-includes" style="margin-top:1.375rem">
               <p class="includes-label">What's included</p>
@@ -143,18 +174,32 @@
             </div>
           </div>
           <div>
-            <div class="pricing-box">
-              <p class="from">Starting at</p>
-              <p class="price">$85</p>
-              <p class="per">per class</p>
-              <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center">Join a Class</a>
+            <div class="pkg-tiers">
+              <div class="pkg-tier">
+                <p class="pkg-tier-name">Drop-In Class</p>
+                <div class="pkg-tier-price">
+                  <span class="pkg-tier-amount">$42</span>
+                  <span class="pkg-tier-unit">/ dog</span>
+                </div>
+                <p class="pkg-breakdown">Per class, per dog</p>
+              </div>
+              <div class="pkg-tier pkg-tier--featured">
+                <p class="pkg-badge">Best Value</p>
+                <p class="pkg-tier-name">6-Week Course</p>
+                <div class="pkg-tier-price">
+                  <span class="pkg-tier-amount">$220</span>
+                  <span class="pkg-tier-unit">/ dog</span>
+                </div>
+                <p class="pkg-breakdown">$37 / class</p>
+                <p class="pkg-save">// Save $32</p>
+              </div>
+              <a href="contact.html?service=group" class="btn btn-primary pkg-cta" style="width:100%;justify-content:center">Join the Waitlist</a>
             </div>
-            <p style="font-size:0.8125rem;color:#999;text-align:center;margin-top:0.75rem">Full 6-week series<br>available from $450</p>
           </div>
         </div>
 
         <!-- Puppy Training -->
-        <div class="service-full" data-animate>
+        <div class="service-full" data-animate id="puppy">
           <div>
             <div class="service-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -182,18 +227,30 @@
             </div>
           </div>
           <div>
-            <div class="pricing-box">
-              <p class="from">Starting at</p>
-              <p class="price">$135</p>
-              <p class="per">per session</p>
-              <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center">Get Started</a>
+            <div class="pkg-tiers">
+              <div class="pkg-tier">
+                <p class="pkg-tier-name">Single Session</p>
+                <div class="pkg-tier-price">
+                  <span class="pkg-tier-amount">$115</span>
+                  <span class="pkg-tier-unit">/ session</span>
+                </div>
+              </div>
+              <div class="pkg-tier pkg-tier--featured">
+                <p class="pkg-badge">Recommended</p>
+                <p class="pkg-tier-name">Foundation Program</p>
+                <div class="pkg-tier-price">
+                  <span class="pkg-tier-amount">$599</span>
+                </div>
+                <p class="pkg-breakdown">8 sessions · $75 / session</p>
+                <p class="pkg-save">// Save $321</p>
+              </div>
+              <a href="contact.html?service=puppy" class="btn btn-primary pkg-cta" style="width:100%;justify-content:center">Get Started</a>
             </div>
-            <p style="font-size:0.8125rem;color:#999;text-align:center;margin-top:0.75rem">Puppy Jumpstart Package<br>(4 sessions) $480</p>
           </div>
         </div>
 
         <!-- Behavior Problem-Solving -->
-        <div class="service-full" data-animate>
+        <div class="service-full" data-animate id="behavior">
           <div>
             <div class="service-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -222,13 +279,32 @@
             </div>
           </div>
           <div>
-            <div class="pricing-box">
-              <p class="from">Starting at</p>
-              <p class="price">$150</p>
-              <p class="per">per session</p>
-              <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center">Book an Assessment</a>
+            <div class="pkg-tiers">
+              <div class="pkg-tier">
+                <p class="pkg-tier-name">Initial Assessment</p>
+                <div class="pkg-tier-price">
+                  <span class="pkg-tier-amount">$150</span>
+                </div>
+                <p class="pkg-breakdown">90 min · required first visit</p>
+              </div>
+              <div class="pkg-tier">
+                <p class="pkg-tier-name">Follow-On Session</p>
+                <div class="pkg-tier-price">
+                  <span class="pkg-tier-amount">$135</span>
+                  <span class="pkg-tier-unit">/ session</span>
+                </div>
+              </div>
+              <div class="pkg-tier pkg-tier--featured">
+                <p class="pkg-badge">Best Value</p>
+                <p class="pkg-tier-name">Modification Package</p>
+                <div class="pkg-tier-price">
+                  <span class="pkg-tier-amount">$750</span>
+                </div>
+                <p class="pkg-breakdown">Assessment + 5 sessions</p>
+                <p class="pkg-save">// Save $75</p>
+              </div>
+              <a href="contact.html?service=behavior" class="btn btn-primary pkg-cta" style="width:100%;justify-content:center">Book an Assessment</a>
             </div>
-            <p style="font-size:0.8125rem;color:#999;text-align:center;margin-top:0.75rem">Assessment session<br>required first visit</p>
           </div>
         </div>
 
@@ -282,6 +358,10 @@
               <h4 style="margin-bottom:0.4rem;color:var(--green)">Free discovery call</h4>
               <p style="font-size:0.9rem;color:#5e5e5b;max-width:none;margin:0">Not sure which service is right? Book a free 15-minute call — tell me about your dog and I'll recommend the best path forward. No charge, no pressure.</p>
             </div>
+            <div style="background:white;border-radius:var(--radius-md);padding:1.375rem;border:1px solid rgba(15,110,86,0.1);grid-column:1/-1">
+              <h4 style="margin-bottom:0.4rem;color:var(--green)">Equipment may be required</h4>
+              <p style="font-size:0.9rem;color:#5e5e5b;max-width:none;margin:0">Some training programs work best with specific tools — an e-collar, training cot, long line, slip lead, or prong collar depending on your dog's needs and goals. I'll let you know exactly what's recommended before you purchase anything. Most items run <strong style="color:#5e5e5b">$20–$150</strong> and are available online or at local pet stores. Nothing is required upfront — we'll talk through it together first.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -297,7 +377,7 @@
           and you'll leave with a clear picture of the right path forward.
         </p>
         <div class="btn-group" style="justify-content:center" data-animate>
-          <a href="contact.html" class="btn btn-white btn-lg">Book a Free Consult</a>
+          <a href="contact.html?service=consult" class="btn btn-white btn-lg">Book a Free Consult</a>
         </div>
       </div>
     </section>

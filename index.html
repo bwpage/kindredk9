@@ -20,6 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/theme.js"></script>
 </head>
 <body class="grid-bg">
 
@@ -36,9 +37,20 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Switch to light mode">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -129,7 +141,7 @@
         <div class="trust-bar-inner">
           <span class="trust-item">
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5"/></svg>
-            Positive, force-free methods
+            Positive, reinforcement methods
           </span>
           <span class="trust-sep" aria-hidden="true"></span>
           <span class="trust-item">
@@ -163,7 +175,7 @@
         </div>
 
         <div class="services-grid">
-          <div class="service-card" data-animate data-delay="1">
+          <a href="services.html#puppy" class="service-card" data-animate data-delay="1">
             <div class="service-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/>
@@ -172,42 +184,41 @@
             <h3>Puppy Foundation Training</h3>
             <p>Give your new pup the best possible start — building confidence, manners, and the habits that stick.</p>
             <div class="service-price">
-              <span class="amount">$135</span>
-              <span class="label">– $150 / session</span>
+              <span class="amount">$115</span>
+              <span class="label">/ session</span>
             </div>
-          </div>
+          </a>
 
-          <div class="service-card" data-animate data-delay="2">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 8v4l3 3"/>
-              </svg>
-            </div>
-            <h3>Group Training Classes</h3>
-            <p>Learn alongside other dog owners in a supportive setting — great for socialization and basic skills.</p>
-            <div class="service-price">
-              <span class="amount">$85</span>
-              <span class="label">– $95 / class</span>
-            </div>
-          </div>
-
-          <div class="service-card" data-animate data-delay="3">
+          <a href="services.html#group" class="service-card" data-animate data-delay="2">
             <div class="service-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
                 <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
                 <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
               </svg>
             </div>
+            <h3>Group Training Classes</h3>
+            <p>Learn alongside other dog owners in a supportive setting — great for socialization and basic skills.</p>
+            <div class="service-price">
+              <span class="amount">$42</span>
+              <span class="label">/ dog per class</span>
+            </div>
+          </a>
+
+          <a href="services.html#private" class="service-card" data-animate data-delay="3">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
             <h3>Private 1-on-1 Sessions</h3>
             <p>Focused, distraction-free training tailored to your dog's exact needs and your goals at home.</p>
             <div class="service-price">
-              <span class="amount">$135</span>
-              <span class="label">– $150 / session</span>
+              <span class="amount">$110</span>
+              <span class="label">/ session</span>
             </div>
-          </div>
+          </a>
 
-          <div class="service-card" data-animate data-delay="4">
+          <a href="services.html#behavior" class="service-card" data-animate data-delay="4">
             <div class="service-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -217,9 +228,9 @@
             <p>Jumping, leash pulling, reactivity, anxiety — we'll identify the root cause and build a real solution.</p>
             <div class="service-price">
               <span class="amount">$150</span>
-              <span class="label">– $175 / session</span>
+              <span class="label">/ assessment</span>
             </div>
-          </div>
+          </a>
         </div>
 
         <div style="margin-top:2.5rem; text-align:center;" data-animate>
@@ -272,15 +283,17 @@
           <div class="testimonial-card" data-animate data-delay="1">
             <div class="testimonial-stars">★★★★★</div>
             <blockquote>
-              "Our rescue dog was terrified of everything when we first brought him home.
-              After just three sessions, he's a completely different dog — confident, happy,
-              and actually listening to us. I can't recommend Kindred K9 enough."
+              "I wouldn't say our lab was a 'bad' dog before hiring Dan, but it has been a night
+              and day difference after just 2 weeks. He's so much more responsive to commands —
+              now he goes to his 'place' and stays until he's released. That relieves so much
+              anxiety when you have kids or guests over. Every aspect of owning a dog has gotten
+              so much easier. I wish we would've done this sooner!"
             </blockquote>
             <div class="testimonial-author">
-              <div class="testimonial-avatar" aria-hidden="true">S</div>
+              <div class="testimonial-avatar" aria-hidden="true">L</div>
               <div>
-                <p class="testimonial-name">Sarah M.</p>
-                <p class="testimonial-meta">Davis County, UT · Rescue dog owner</p>
+                <p class="testimonial-name">Levi T.</p>
+                <p class="testimonial-meta">Davis County, UT · Lab owner</p>
               </div>
             </div>
           </div>
@@ -288,31 +301,17 @@
           <div class="testimonial-card" data-animate data-delay="2">
             <div class="testimonial-stars">★★★★★</div>
             <blockquote>
-              "We tried two other trainers before this. The difference is immediately obvious —
-              the warmth, the patience, the way our dog actually enjoys the sessions.
-              Our whole family noticed the change within a week."
+              "One of my favorite parts of Dan's training style is that he works in your home,
+              in your dog's natural environment. He didn't just learn to listen to Dan — he learned
+              to listen to all of us. Training us was just as important as training our dog. It's
+              set us up to keep improving and maintain the good habits. I highly recommend Dan —
+              I promise you won't regret it!"
             </blockquote>
             <div class="testimonial-author">
-              <div class="testimonial-avatar" aria-hidden="true">J</div>
+              <div class="testimonial-avatar" aria-hidden="true">C</div>
               <div>
-                <p class="testimonial-name">Jake &amp; Tori R.</p>
-                <p class="testimonial-meta">Riverton, UT · Golden Retriever owners</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card" data-animate data-delay="3">
-            <div class="testimonial-stars">★★★★★</div>
-            <blockquote>
-              "Started puppy classes and within a month our 10-week-old was sitting, staying,
-              and walking on leash. I felt like I actually understood my dog for the first time.
-              Worth every penny."
-            </blockquote>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar" aria-hidden="true">A</div>
-              <div>
-                <p class="testimonial-name">Amanda L.</p>
-                <p class="testimonial-meta">Davis County, UT · New puppy owner</p>
+                <p class="testimonial-name">Carolyn T.</p>
+                <p class="testimonial-meta">Davis County, UT · Lab owner</p>
               </div>
             </div>
           </div>
@@ -393,8 +392,8 @@
         <div class="footer-col">
           <h4>Contact</h4>
           <ul>
-            <li><a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a></li>
-            <li><a href="mailto:hello@kindredk-9.com">hello@kindredk-9.com</a></li>
+            <li><a href="tel:+18018141403">(801) 814-1403</a></li>
+            <li><a href="mailto:hello@kindredk-9.com">dan@kindredk-9.com</a></li>
             <li><a href="contact.html">kindredk-9.com</a></li>
             <li style="color:rgba(255,255,255,0.4); font-size:0.875rem; padding-top:0.25rem">Davis County, Utah</li>
           </ul>

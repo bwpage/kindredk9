@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/theme.js"></script>
 </head>
 <body class="grid-bg">
 
@@ -31,9 +32,20 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Switch to light mode">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -113,15 +125,29 @@
               </div>
 
               <div class="form-group">
-                <label for="service">What are you interested in?</label>
-                <select id="service" name="service">
-                  <option value="">Select a service…</option>
-                  <option value="private">Private 1-on-1 Sessions</option>
-                  <option value="group">Group Training Classes</option>
-                  <option value="puppy">Puppy Foundation Training</option>
-                  <option value="behavior">Behavioral Problem-Solving</option>
-                  <option value="consult">Free Phone Consult (not sure yet)</option>
-                </select>
+                <label id="service-label">What are you interested in?</label>
+                <div class="custom-select" id="service-select" role="combobox" aria-labelledby="service-label" aria-haspopup="listbox" aria-expanded="false">
+                  <button type="button" class="custom-select-trigger" id="service-trigger">
+                    <span class="custom-select-value placeholder">Select a service…</span>
+                    <svg viewBox="0 0 12 8" width="12" height="8" fill="none" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </button>
+                  <ul class="custom-select-dropdown" role="listbox" id="service-listbox" aria-labelledby="service-label">
+                    <li class="custom-select-option" role="option" data-value="" aria-selected="true">Select a service…</li>
+                    <li class="custom-select-option" role="option" data-value="private" aria-selected="false">Private 1-on-1 Sessions</li>
+                    <li class="custom-select-option" role="option" data-value="group" aria-selected="false">Group Training Classes</li>
+                    <li class="custom-select-option" role="option" data-value="puppy" aria-selected="false">Puppy Foundation Training</li>
+                    <li class="custom-select-option" role="option" data-value="behavior" aria-selected="false">Behavioral Problem-Solving</li>
+                    <li class="custom-select-option" role="option" data-value="consult" aria-selected="false">Free Phone Consult (not sure yet)</li>
+                  </ul>
+                  <input type="hidden" name="service" id="service" value="">
+                </div>
+                <div id="service-banner" class="service-banner" hidden>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <div>
+                    <p class="service-banner-label">You're inquiring about:</p>
+                    <p id="service-banner-name" class="service-banner-name"></p>
+                  </div>
+                </div>
               </div>
 
               <div class="form-group">
@@ -151,15 +177,14 @@
                 <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
                 <line x1="3" y1="10" x2="21" y2="10"/>
               </svg>
-              <h4>Book Online</h4>
-              <p>Pick a time that works for you — straight from my calendar, no back-and-forth needed.</p>
-              <!-- TODO: Replace "#book" with your Google Appointment Scheduling URL -->
+              <h4>Free Phone Consult</h4>
+              <p>Not sure where to start? Grab a 15-minute slot on my calendar — no charge, no pressure. We'll talk about your dog and figure out the right path forward together.</p>
               <a href="https://calendar.app.google/4kXq4UkgBXxMSehu8" target="_blank" rel="noopener" class="btn btn-primary" style="display:inline-flex">
-                View Available Times
+                Book a Free 15-Min Call
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:14px;height:14px;margin-left:6px"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
               </a>
               <p style="font-size:0.75rem;color:#aaa;margin-top:0.625rem;max-width:none">
-                Opens Google Calendar booking in a new tab
+                This books a free consultation call only — not a paid training session.
               </p>
             </div>
 
@@ -337,5 +362,54 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var wrapper  = document.getElementById('service-select');
+      var trigger  = document.getElementById('service-trigger');
+      var listbox  = document.getElementById('service-listbox');
+      var display  = trigger.querySelector('.custom-select-value');
+      var hidden   = document.getElementById('service');
+      var options  = Array.from(listbox.querySelectorAll('.custom-select-option'));
+      var banner   = document.getElementById('service-banner');
+      var nameEl   = document.getElementById('service-banner-name');
+
+      var labels = {
+        private:  'Private 1-on-1 Sessions',
+        group:    'Group Training Classes',
+        puppy:    'Puppy Foundation Training',
+        behavior: 'Behavioral Problem-Solving',
+        consult:  'Free Phone Consult'
+      };
+
+      function open()  { wrapper.classList.add('is-open');    trigger.setAttribute('aria-expanded','true'); }
+      function close() { wrapper.classList.remove('is-open'); trigger.setAttribute('aria-expanded','false'); }
+
+      function pick(value, label) {
+        hidden.value = value;
+        display.textContent = label;
+        display.classList.toggle('placeholder', !value);
+        options.forEach(function(o){ o.setAttribute('aria-selected', o.dataset.value===value ? 'true':'false'); });
+        close();
+        if (banner && nameEl) {
+          if (labels[value]) { nameEl.textContent = labels[value]; banner.removeAttribute('hidden'); }
+          else { banner.setAttribute('hidden',''); }
+        }
+      }
+
+      trigger.addEventListener('click', function(){ wrapper.classList.contains('is-open') ? close() : open(); });
+
+      options.forEach(function(opt){
+        opt.addEventListener('click', function(){ pick(opt.dataset.value, opt.textContent.trim()); });
+      });
+
+      document.addEventListener('click', function(e){ if (!wrapper.contains(e.target)) close(); });
+
+      var param = new URLSearchParams(window.location.search).get('service');
+      if (param) {
+        var match = options.find(function(o){ return o.dataset.value === param; });
+        if (match) pick(param, match.textContent.trim());
+      }
+    })();
+  </script>
 </body>
 </html>
